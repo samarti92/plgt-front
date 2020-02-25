@@ -1,5 +1,5 @@
-//const API_URL = 'https://plgt-backend-rails.herokuapp.com';
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://plgt-backend-rails.herokuapp.com';
+//const API_URL = 'http://localhost:3000';
 
 export const fetchUsers = () => fetch(`${API_URL}/users.json`);
 
