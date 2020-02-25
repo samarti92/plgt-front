@@ -16,9 +16,9 @@ import { mapUsersResponse } from './mappers';
 function* createUserSaga(user) {
   try {
     yield call(createUser, user);
-    put(createUserSuccess());
+    yield put(createUserSuccess());
   } catch (_) {
-    createUserFailure();
+    yield put(createUserFailure());
   }
 }
 
@@ -29,7 +29,7 @@ function* fetchUsersSaga() {
     const users = mapUsersResponse(responseData.data);
     yield put(fetchUsersSuccess(users));
   } catch (_) {
-    fetchUsersFailure();
+    yield put(fetchUsersFailure());
   }
 }
 
